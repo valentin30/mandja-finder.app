@@ -315,34 +315,34 @@ export const MandjaFinderMessage: React.FunctionComponent<MandjaFinderMessagePro
         return (
             <div className="flex w-full max-w-[712px] flex-col gap-1">
                 <div className="flex flex-row items-center gap-1">
-                    <Skeleton className="h-3 w-[7%]" />
+                    <Skeleton className="h-3 w-[7%] delay-75 duration-1000" />
                     <Skeleton className="h-3 w-[4%]" />
-                    <Skeleton className="h-3 w-[3%]" />
+                    <Skeleton className="h-3 w-[3%] delay-75" />
                     <Skeleton className="h-3 w-[10%]" />
-                    <Skeleton className="h-3 w-[6%]" />
+                    <Skeleton className="h-3 w-[6%] duration-1000" />
                     <Skeleton className="h-3 w-[9%]" />
-                    <Skeleton className="h-3 w-[11%]" />
+                    <Skeleton className="h-3 w-[11%] delay-75" />
                     <Skeleton className="h-3 w-[9%]" />
-                    <Skeleton className="h-3 w-[8%]" />
+                    <Skeleton className="h-3 w-[8%] duration-1000" />
                     <Skeleton className="h-3 w-[5%]" />
                 </div>
                 <div className="flex flex-row items-center gap-1">
                     <Skeleton className="h-3 w-[10%]" />
                     <Skeleton className="h-3 w-[7%]" />
-                    <Skeleton className="h-3 w-[9%]" />
+                    <Skeleton className="h-3 w-[9%] delay-75 duration-1000" />
                     <Skeleton className="h-3 w-[4%]" />
                     <Skeleton className="h-3 w-[7%]" />
                     <Skeleton className="h-3 w-[6%]" />
-                    <Skeleton className="h-3 w-[9%]" />
+                    <Skeleton className="h-3 w-[9%] delay-75" />
                     <Skeleton className="h-3 w-[11%]" />
-                    <Skeleton className="h-3 w-[5%]" />
+                    <Skeleton className="h-3 w-[5%] duration-1000" />
                     <Skeleton className="h-3 w-[8%]" />
-                    <Skeleton className="h-3 w-[3%]" />
+                    <Skeleton className="h-3 w-[3%] delay-75" />
                 </div>
                 <div className="flex flex-row items-center gap-1">
                     <Skeleton className="h-3 w-[6%]" />
-                    <Skeleton className="h-3 w-[9%]" />
-                    <Skeleton className="h-3 w-[3%]" />
+                    <Skeleton className="h-3 w-[9%] delay-75" />
+                    <Skeleton className="h-3 w-[3%] duration-1000" />
                 </div>
             </div>
         )
@@ -386,7 +386,7 @@ export const MandjaFinderForm: React.FunctionComponent<MandjaFinderFormProps> = 
             <div className="flex w-full max-w-[712px] flex-row items-center rounded-sm bg-muted p-2 shadow-sm transition-[box-shadow,_color,_background-color] duration-300 focus-within:bg-secondary focus-within:shadow-lg">
                 <UnstyledInput
                     className="mt-0.5 flex-grow px-3 py-1"
-                    placeholder="Попитай за идеи за рецепти и намаления."
+                    placeholder="Попитай за рецепти и намаления."
                     value={value}
                     onChange={e => client.value.set(e.target.value)}
                 />
