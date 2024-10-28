@@ -58,8 +58,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
     initialScale: 1,
     colorScheme: 'light dark',
-    viewportFit: 'contain',
-    interactiveWidget: 'overlays-content',
     userScalable: true,
     width: 'device-width',
     height: 'device-height',
