@@ -17,7 +17,7 @@ export const view = managed<View>('splash')
 export const value = managed<string>('')
 export const thread = managed<string | null>(null)
 export const thinking = managed<boolean>(false)
-export const message = managed<Message>({ id: 'id', role: 'assistant', content: '_Thinking..._' })
+export const message = managed<Message>({ id: 'loading', role: 'assistant', content: '' })
 export const messages = managed<Message[]>([])
 
 thread.subscribe(() => localStorage.setItem('thread', thread.get() || ''))
@@ -66,7 +66,7 @@ export const send = async () => {
     if (view.get() !== 'conversation') view.set('conversation')
 
     thinking.set(true)
-    message.set({ id: 'id', role: 'assistant', content: '_..._' })
+    message.set({ id: 'loading', role: 'assistant', content: '' })
 
     if (!thread.get()) {
         try {

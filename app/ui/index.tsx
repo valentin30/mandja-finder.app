@@ -27,6 +27,12 @@ export const Spacer: React.FunctionComponent<SpacerProps> = props => {
     return <div className={cn('flex-grow', className)} {...rest} />
 }
 
+export type SkeletonProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+export const Skeleton: React.FunctionComponent<SkeletonProps> = props => {
+    const { className, ...rest } = props
+    return <div className={cn('animate-pulse rounded-sm bg-secondary', className)} {...rest} />
+}
+
 export type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
 export const ButtonBase: React.FunctionComponent<ButtonProps> = props => {

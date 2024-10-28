@@ -1,7 +1,7 @@
 'use client'
 
 import { client } from '@/app/client'
-import { Heading, Hint, IconButton, PrimaryIconButton, Spacer, UnstyledInput } from '@/app/ui'
+import { Heading, Hint, IconButton, PrimaryIconButton, Skeleton, Spacer, UnstyledInput } from '@/app/ui'
 import { useRead } from '@/lib/use-read'
 import { cn } from '@/lib/utils'
 import { MoonIcon, PlayIcon, SunIcon } from '@radix-ui/react-icons'
@@ -311,6 +311,43 @@ export const MandjaFinderMessages: React.FunctionComponent<MandjaFinderMessagesP
 
 export type MandjaFinderMessageProps = { message: client.Message }
 export const MandjaFinderMessage: React.FunctionComponent<MandjaFinderMessageProps> = React.memo(props => {
+    if (props.message.id === 'loading' && props.message.content === '') {
+        return (
+            <div className="flex w-full max-w-[712px] flex-col gap-1">
+                <div className="flex flex-row items-center gap-1">
+                    <Skeleton className="h-3 w-[7%]" />
+                    <Skeleton className="h-3 w-[4%]" />
+                    <Skeleton className="h-3 w-[3%]" />
+                    <Skeleton className="h-3 w-[10%]" />
+                    <Skeleton className="h-3 w-[6%]" />
+                    <Skeleton className="h-3 w-[9%]" />
+                    <Skeleton className="h-3 w-[11%]" />
+                    <Skeleton className="h-3 w-[9%]" />
+                    <Skeleton className="h-3 w-[8%]" />
+                    <Skeleton className="h-3 w-[5%]" />
+                </div>
+                <div className="flex flex-row items-center gap-1">
+                    <Skeleton className="h-3 w-[10%]" />
+                    <Skeleton className="h-3 w-[7%]" />
+                    <Skeleton className="h-3 w-[9%]" />
+                    <Skeleton className="h-3 w-[4%]" />
+                    <Skeleton className="h-3 w-[7%]" />
+                    <Skeleton className="h-3 w-[6%]" />
+                    <Skeleton className="h-3 w-[9%]" />
+                    <Skeleton className="h-3 w-[11%]" />
+                    <Skeleton className="h-3 w-[5%]" />
+                    <Skeleton className="h-3 w-[8%]" />
+                    <Skeleton className="h-3 w-[3%]" />
+                </div>
+                <div className="flex flex-row items-center gap-1">
+                    <Skeleton className="h-3 w-[6%]" />
+                    <Skeleton className="h-3 w-[9%]" />
+                    <Skeleton className="h-3 w-[3%]" />
+                </div>
+            </div>
+        )
+    }
+
     if (props.message.role === 'user') {
         return (
             <div className="w-full max-w-[712px]">
@@ -349,7 +386,7 @@ export const MandjaFinderForm: React.FunctionComponent<MandjaFinderFormProps> = 
             <div className="flex w-full max-w-[712px] flex-row items-center rounded-sm bg-muted p-2 shadow-sm transition-[box-shadow,_color,_background-color] duration-300 focus-within:bg-secondary focus-within:shadow-lg">
                 <UnstyledInput
                     className="mt-0.5 flex-grow px-3 py-1"
-                    placeholder="Hello from gpt"
+                    placeholder="Попитай за идеи за рецепти и намаления."
                     value={value}
                     onChange={e => client.value.set(e.target.value)}
                 />
