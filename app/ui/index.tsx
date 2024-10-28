@@ -4,7 +4,11 @@ import React from 'react'
 export type HeadingProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>
 export const Heading: React.FunctionComponent<HeadingProps> = props => {
     const { className, children, ...rest } = props
-    return <h1 className={cn('font-[family-name:var(--font-reklame-script)] text-6xl sm:text-8xl', className)}>{children}</h1>
+    return (
+        <h1 className={cn('font-[family-name:var(--font-reklame-script)] text-6xl sm:text-8xl', className)} {...rest}>
+            {children}
+        </h1>
+    )
 }
 
 export type HintProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>

@@ -240,6 +240,7 @@ export const MandjaFinderChat: React.FunctionComponent<MandjaFinderChatProps> = 
                 'pb-6 sm:pb-8',
                 'transition-all duration-1000',
                 'data-[view="splash"]:opacity-0 data-[view="splash"]:duration-0',
+                className,
             )}
             data-view={view}
             {...rest}
@@ -326,6 +327,8 @@ export const MandjaFinderMessage: React.FunctionComponent<MandjaFinderMessagePro
         </div>
     )
 })
+
+MandjaFinderMessage.displayName = 'MandjaFinderMessage'
 
 export type MandjaFinderFormProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLFormElement>, HTMLFormElement>
 export const MandjaFinderForm: React.FunctionComponent<MandjaFinderFormProps> = props => {
