@@ -29,7 +29,7 @@ export const init = async () => {
     value.set('')
     thinking.set(false)
 
-    await delay(1000)
+    await delay(500)
 
     try {
         thread.set(localStorage.getItem('thread'))

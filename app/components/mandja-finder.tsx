@@ -184,6 +184,7 @@ export const MandjaFinderModeToggle: React.FunctionComponent<MandjaFinderModeTog
         <IconButton
             className={cn('fixed right-6 top-6 z-50', className)}
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            aria-label="Toggle Theme"
             {...rest}
         >
             <SunIcon className="absolute rotate-0 scale-100 text-secondary-foreground dark:-rotate-90 dark:scale-0" />
@@ -390,7 +391,7 @@ export const MandjaFinderForm: React.FunctionComponent<MandjaFinderFormProps> = 
                     value={value}
                     onChange={e => client.value.set(e.target.value)}
                 />
-                <PrimaryIconButton type="submit" disabled={disabled}>
+                <PrimaryIconButton type="submit" disabled={disabled} aria-label="Send Message">
                     <PlayIcon />
                 </PrimaryIconButton>
             </div>
