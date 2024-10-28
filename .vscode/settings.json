@@ -1,0 +1,81 @@
+{
+  // Files
+  "files.autoSave": "onFocusChange",
+
+  // Editor
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.stickyScroll.scrollWithEditor": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.scrollBeyondLastLine": false,
+  "editor.minimap.maxColumn": 100,
+  "editor.tabSize": 4,
+  "editor.suggestSelection": "first",
+
+  "[typescript]": {
+    "editor.tabSize": 4
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 4
+  },
+  "[javascript]": {
+    "editor.tabSize": 4
+  },
+  "[javascriptreact]": {
+    "editor.tabSize": 4
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "[snippets]": {
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2
+  },
+
+  // Workbench
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.activeIconPack": "nest",
+  "material-icon-theme.files.associations": {},
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.sideBar.location": "left",
+
+  // Prettier
+  "prettier.semi": false,
+  "prettier.tabWidth": 4,
+  "prettier.arrowParens": "always",
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "prettier.jsxSingleQuote": true,
+
+  // JavaScript
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+
+  // TypeScript
+  "typescript.preferences.quoteStyle": "single",
+  // "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  // "typescript.tsserver.useSyntaxServer": "never",
+
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+
+  // Other
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "explorer.confirmDelete": false,
+  "aws.suppressPrompts": {
+    "regionAddAutomatically": true
+  },
+  "git.confirmSync": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "editor.scrollBeyondLastColumn": 0
+}
