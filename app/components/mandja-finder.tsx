@@ -529,7 +529,7 @@ export const MandjaFinderForm: React.FunctionComponent<MandjaFinderFormProps> = 
                 client.send()
             }}
         >
-            <div className="bg-dark-muted flex w-full max-w-[712px] flex-row items-center rounded-sm p-2 shadow-sm transition-[box-shadow,_color,_background-color] duration-300 focus-within:bg-secondary focus-within:shadow-lg">
+            <div className="flex w-full max-w-[712px] flex-row items-center rounded-sm bg-muted p-2 shadow-sm transition-[box-shadow,_color,_background-color] duration-300 focus-within:bg-secondary focus-within:shadow-lg">
                 <UnstyledInput
                     className="mt-0.5 flex-grow px-3 py-1"
                     placeholder="Попитай за рецепти и намаления."
