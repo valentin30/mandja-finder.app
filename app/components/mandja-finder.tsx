@@ -119,7 +119,7 @@ export type MandjaFinderSettingsProps = React.DetailedHTMLProps<React.HTMLAttrib
 export const MandjaFinderSettings: React.FunctionComponent<MandjaFinderSettingsProps> = props => {
     const { className, ...rest } = props
     const [open, setOpen] = React.useState(false)
-    const { setTheme, theme } = useTheme()
+    const { setTheme, theme, systemTheme } = useTheme()
     const view = useRead(client.view)
     if (view === 'splash') return null
     return (
@@ -138,7 +138,12 @@ export const MandjaFinderSettings: React.FunctionComponent<MandjaFinderSettingsP
                         <div className="w-full max-w-[712px]">
                             <p className="text-base font-semibold text-foreground sm:text-lg">Theme</p>
                             <p className="text-sm font-light text-secondary-foreground sm:text-base">Select the theme for the app.</p>
-                            <RadioGroup name="theme" className="mt-2 flex flex-row gap-2" value={theme} onValueChange={v => setTheme(v)}>
+                            <RadioGroup
+                                name="theme"
+                                className="mt-2 flex flex-row gap-2"
+                                value={theme === 'system' ? systemTheme : theme}
+                                onValueChange={v => setTheme(v)}
+                            >
                                 <label htmlFor="light" className="cursor-pointer [&:has([data-state=checked])>div]:border-primary">
                                     <RadioGroupItem id="light" value="light" className="sr-only"></RadioGroupItem>
                                     <div className="bg-light items-center rounded-md border-2 border-muted p-1">
@@ -163,17 +168,17 @@ export const MandjaFinderSettings: React.FunctionComponent<MandjaFinderSettingsP
                                     <RadioGroupItem id="dark" value="dark" className="sr-only"></RadioGroupItem>
                                     <div className="bg-dark items-center rounded-md border-2 border-muted bg-popover p-1">
                                         <div className="bg-dark-secondary space-y-2 rounded-sm p-2">
-                                            <div className="space-y-2 rounded-md bg-dark-muted p-2 shadow-sm">
-                                                <div className="h-2 w-[80px] rounded-lg bg-dark-muted-foreground" />
-                                                <div className="h-2 w-[100px] rounded-lg bg-dark-muted-foreground" />
+                                            <div className="bg-dark-muted space-y-2 rounded-md p-2 shadow-sm">
+                                                <div className="bg-dark-muted-foreground h-2 w-[80px] rounded-lg" />
+                                                <div className="bg-dark-muted-foreground h-2 w-[100px] rounded-lg" />
                                             </div>
-                                            <div className="flex items-center space-x-2 rounded-md bg-dark-muted p-2 shadow-sm">
-                                                <div className="h-4 w-4 rounded-full bg-dark-muted-foreground" />
-                                                <div className="h-2 w-[100px] rounded-lg bg-dark-muted-foreground" />
+                                            <div className="bg-dark-muted flex items-center space-x-2 rounded-md p-2 shadow-sm">
+                                                <div className="bg-dark-muted-foreground h-4 w-4 rounded-full" />
+                                                <div className="bg-dark-muted-foreground h-2 w-[100px] rounded-lg" />
                                             </div>
-                                            <div className="flex items-center space-x-2 rounded-md bg-dark-muted p-2 shadow-sm">
-                                                <div className="h-4 w-4 rounded-full bg-dark-muted-foreground" />
-                                                <div className="h-2 w-[100px] rounded-lg bg-dark-muted-foreground" />
+                                            <div className="bg-dark-muted flex items-center space-x-2 rounded-md p-2 shadow-sm">
+                                                <div className="bg-dark-muted-foreground h-4 w-4 rounded-full" />
+                                                <div className="bg-dark-muted-foreground h-2 w-[100px] rounded-lg" />
                                             </div>
                                         </div>
                                     </div>
@@ -524,7 +529,7 @@ export const MandjaFinderForm: React.FunctionComponent<MandjaFinderFormProps> = 
                 client.send()
             }}
         >
-            <div className="flex w-full max-w-[712px] flex-row items-center rounded-sm bg-dark-muted p-2 shadow-sm transition-[box-shadow,_color,_background-color] duration-300 focus-within:bg-secondary focus-within:shadow-lg">
+            <div className="bg-dark-muted flex w-full max-w-[712px] flex-row items-center rounded-sm p-2 shadow-sm transition-[box-shadow,_color,_background-color] duration-300 focus-within:bg-secondary focus-within:shadow-lg">
                 <UnstyledInput
                     className="mt-0.5 flex-grow px-3 py-1"
                     placeholder="Попитай за рецепти и намаления."
