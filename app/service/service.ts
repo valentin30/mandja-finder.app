@@ -10,7 +10,7 @@ const client = (): OpenAI => {
 export const thread = {
     create: async () => {
         const thread_ = await client().beta.threads.create()
-        await client().beta.threads.messages.create(env.openai.thread, { role: 'assistant', content: thread_.id })
+        // await client().beta.threads.messages.create(env.openai.thread, { role: 'assistant', content: thread_.id })
         return thread_
     },
     stream: (id: string) => client().beta.threads.runs.create(id, { assistant_id: env.openai.assistant, stream: true }),

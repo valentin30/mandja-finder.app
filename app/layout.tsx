@@ -19,7 +19,7 @@ const nunito = Nunito({
 export const metadata: Metadata = {
     title: 'Mandja Finder',
     applicationName: 'Mandja Finder',
-    description: 'Mandja Finder is an app that helps you find recipes and ingredient discounts.',
+    description: 'Приложение за изгодно пазаруване с персонализирани оферти и рецепти. Открийте промоции и планирайте менюто си лесно!',
     keywords: [
         'food',
         'drink',
@@ -51,6 +51,15 @@ export const metadata: Metadata = {
         'taste',
         'flavor',
         'ingredient',
+        'Изгодно пазаруване',
+        'Намаления на храни',
+        'Оферти супермаркети',
+        'Готварски рецепти',
+        'Седмично меню',
+        'Хранителни продукти',
+        'Умно пазаруване',
+        'Готварски идеи',
+        'Промоции на храни',
     ],
     robots: 'index, follow',
 }
