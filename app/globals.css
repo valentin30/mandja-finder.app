@@ -65,6 +65,30 @@
     }
 }
 
+.bg-light {
+    background-color: hsl(0 0% 100%);
+}
+
+.bg-light-secondary {
+    background-color: hsl(0, 0%, 0%, 0.06);
+}
+
+.bg-dark {
+    background-color: hsl(0 0% 0%);
+}
+
+.bg-dark-secondary {
+    background-color: hsl(0, 0%, 100%, 0.09);
+}
+
+.bg-dark-muted {
+    background-color: hsl(0, 0%, 100%, 0.08);
+}
+
+.bg-dark-muted-foreground {
+    background-color: hsl(0, 0%, 100%, 0.5);
+}
+
 @layer base {
     * {
         @apply border-border antialiased;
